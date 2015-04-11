@@ -2,7 +2,7 @@ PlayersList = new Mongo.Collection('players');
 
 
 if(Meteor.isClient) {
-	
+
 	Template.leaderboard.helpers({
 		'player': function(){
 			return PlayersList.find()
@@ -10,8 +10,8 @@ if(Meteor.isClient) {
 	});
 
 		Template.leaderboard.events({
-		'click': function(){
-			console.log("You clicked something");
+		'click li': function(){
+			console.log("You clicked an li element");
 		}
 	});
 };
