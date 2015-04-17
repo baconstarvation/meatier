@@ -15,10 +15,14 @@ if(Meteor.isClient) {
 			if(playerId == selectedPlayer){
 			return "selected"
 			}
+		},
+		'showSelectedPlayer': function(){
+			var selectedPlayer = Session.get('selectedPlayer');
+			return PlayersList.findOne(selectedPlayer);
 		}
 	});
 
-		Template.leaderboard.events({
+	Template.leaderboard.events({
 		'click .player': function(){
 			var playerId = this._id;
 			Session.set('selectedPlayer', playerId);
