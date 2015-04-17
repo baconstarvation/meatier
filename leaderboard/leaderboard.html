@@ -16,5 +16,13 @@
 		{{#if showSelectedPlayer}}
 			<li>Selected Player: {{showSelectedPlayer.name}}</li>
 		{{/if}}
-</ul>
+	</ul>
+	{{> addPlayerForm}}
+</template>
+
+<template name="addPlayerForm">
+	<form>
+		<input type="text" name="playerName">
+		<input type="submit" value="Add Player">
+	</form>
 </template>
