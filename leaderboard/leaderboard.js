@@ -40,8 +40,11 @@ if(Meteor.isClient) {
 	Template.addPlayerForm.events({
 		'submit form': function(event) {
 			event.preventDefault();
-			console.log("Form submitted");
-			console.log(event.type);
+			var playerNameVar = event.target.playerName.value;
+			PlayersList.insert({
+				name: playerNameVar,
+				score: 0
+			})
 		}
 	});
 };
